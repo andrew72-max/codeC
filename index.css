@@ -1,0 +1,19 @@
+body{
+    background-color: rgb(1, 400, 412);
+}
+.purchased{
+    background-color: greenyellow;
+    text-decoration: line-through;
+    color: rgb(165, 42, 42);
+    background-origin: padding-box;
+}
+li{
+    margin: 10px;
+}
+button{
+    font-size: 15px;
+    padding: 7px;
+    margin-left: 50px;
+    border: 30px;
+    background-color: greenyellow;
+}
