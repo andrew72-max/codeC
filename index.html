@@ -1,0 +1,62 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>shopping list</title>
+    <style>
+        body{
+            background-color: rgb(1, 400, 412);
+        }
+        .purchased{
+            background-color: greenyellow;
+            text-decoration: line-through;
+            color: rgb(165, 42, 42);
+            background-origin: padding-box;
+        }
+        li{
+            margin: 10px;
+        }
+        button{
+            font-size: 15px;
+            padding: 7px;
+            margin-left: 50px;
+            border: 30px;
+            background-color: greenyellow;
+        }
+    </style>
+</head>
+<body>
+<input type="text" id="itemInput" placeholder="Add an item" />
+<button id="additem">add items</button>
+<button id="clear">clear list</button>
+<ul id="itemlist"></ul>
+<script>
+const additem = document.getElementById("additem");
+const clear = document.getElementById("clear");
+const itemInput = document.getElementById("itemInput");
+const itemlist = document.getElementById("itemlist");
+
+additem.addEventListener("click", function() {
+    const itemtext = itemInput.value.trim();
+    if (itemtext !== "") {
+        const li = document.createElement("li");
+        li.textContent = itemtext;
+        
+        const markPurchasedButton = document.createElement("button");
+        markPurchasedButton.textContent = "markPurchased";
+        markPurchasedButton.addEventListener("click", function() {
+            li.classList.toggle("purchased");
+        });
+        li.appendChild(markPurchasedButton);
+        itemlist.appendChild(li);
+        itemInput.value = ''; 
+    }
+});
+
+clear.addEventListener('click', function() {
+    itemlist.innerHTML = '';
+});
+</script>
+</body>
+</html>
